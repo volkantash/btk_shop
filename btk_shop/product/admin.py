@@ -1,5 +1,5 @@
 from django.contrib import admin
-from product.models import Category, Product
+from product.models import Category, Product, Url
 
 
 # Register your models here.
@@ -14,3 +14,8 @@ class ProductAdmin(admin.ModelAdmin):
     list_display = ['title', 'category_tag']
     list_filter = ['status','category']
 admin.site.register(Product, ProductAdmin)
+
+class UrlAdmin(admin.ModelAdmin):
+    list_display = ['url']
+
+admin.site.register(Url, UrlAdmin)

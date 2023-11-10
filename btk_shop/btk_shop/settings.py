@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'home.apps.HomeConfig',
     'product.apps.ProductConfig',
 #     eklenen eklentiler
+    'ayarlar.apps.AyarlarConfig',
 ]
 
 MIDDLEWARE = [

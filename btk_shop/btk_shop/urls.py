@@ -16,10 +16,23 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.apps import apps
+import importlib
 
 urlpatterns = [
-    path('', include('home.urls')),
-    path('home/', include('home.urls')),
     path('admin/', admin.site.urls),
-    path('product/', include('product.urls')),
+    path('', include('home.urls')),
+    path('', include('product.urls')),
 ]
+
+uyg = [uygulama.name for uygulama in apps.get_app_configs()]
+uyg2 = apps.get_app_configs()
+print(uyg2)
+# for i in uyg:
+#     try:
+#         importlib.import_module(i + '.urls')
+#         urlpatterns.append(path('', include(i + '.urls')))
+#     except ImportError:
+#         pass # print("BulaMADIK " + i + '.urls')
+
+# print(urlpatterns)
